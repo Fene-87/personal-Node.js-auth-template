@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import authRoute from "./routes/auth.js";
 
 const app = express();
 
@@ -12,6 +13,9 @@ app.use(express.json())
 
 // middleware
 app.use(express.static('public'))
+
+// routes
+app.use('/server', authRoute);
 
 // database connection
 // connect server first then db
