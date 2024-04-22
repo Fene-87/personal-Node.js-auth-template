@@ -1,1 +1,1 @@
-### Node.JAuth Template
+# Node.js Auth Template
