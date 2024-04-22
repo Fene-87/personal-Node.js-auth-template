@@ -8,11 +8,10 @@ const app = express();
 
 dotenv.config();
 
+// middlewares
+app.use(express.static('public'))
 app.use(cors());
 app.use(express.json())
-
-// middleware
-app.use(express.static('public'))
 
 // routes
 app.use('/server', authRoute);
