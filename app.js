@@ -3,15 +3,17 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import authRoute from "./routes/auth.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 
 dotenv.config();
 
 // middlewares
-app.use(express.static('public'))
+app.use(express.static('public'));
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
+app.use(cookieParser());
 
 // routes
 app.use('/server', authRoute);
